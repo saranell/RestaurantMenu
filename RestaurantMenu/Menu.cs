@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace RestaurantMenu
 {
     public class Menu
@@ -11,20 +12,45 @@ namespace RestaurantMenu
             Items = item;
             LastUpdated = lastUpdated;
         }
-        public void PrintMenuItem(MenuItem item)
-        {
-            Console.WriteLine($"{item.Name}\n${item.Description}\n${item.Price}");
-
-            if (item.IsNew)
-            {
-                Console.WriteLine("New item!");
-            }
-        }
-        public List<MenuItem> AddToMenu (MenuItem item)
+        public List<MenuItem> AddItem (MenuItem item)
         {
             Items.Add(item);
             return Items;
         }
+
+        public List<MenuItem> RemoveItem (MenuItem item)
+        {
+            int toBeRemoved = -1;
+            for (int i = 0; i < Items.Count; i++)
+            {
+                if (Items[i].Equals(item))
+                {
+                    toBeRemoved = i;
+                }
+            }
+
+            Items.RemoveAt(toBeRemoved);
+            return Items;
+        }
+
+        public string MenuUpdated()
+        {
+            return "Menu last updated on " + LastUpdated;
+        }
+
+        public void PrintMenuItem(MenuItem item)
+        {
+            Console.WriteLine($"{item.Name}\n${item.Description}\n${item.Price}");
+        }
+
+        public void PrintMenu()
+        {
+            for (int i = 0; i < Items.Count; i++)
+            {
+                Console.WriteLine(Items[i].Description);
+            }
+        }
     }
 }
+
 
