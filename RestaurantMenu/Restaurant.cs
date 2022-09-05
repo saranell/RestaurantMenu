@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace RestaurantMenu
 {
-    public class Program
+    public class Restaurant
     {
         static void Main (string[] args)
         {
@@ -35,7 +35,6 @@ namespace RestaurantMenu
         ourMenu.RemoveItem(tabbouleh);
 
         ourMenu.PrintMenu();
-
+        }
     }
-}
 }
