@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+//using System.Collections.Generic;
 
 namespace RestaurantMenu
 {
@@ -22,7 +22,7 @@ namespace RestaurantMenu
         DateTime today = DateTime.Now;
         List<MenuItem> startingMenu = new List<MenuItem>();
 
-        Menu ourMenu = new Menu(today, startingMenu);
+        Menu ourMenu = new Menu(startingMenu, today);
 
         ourMenu.AddItem(hummus);
         ourMenu.AddItem(falafel);
@@ -30,7 +30,7 @@ namespace RestaurantMenu
 
         ourMenu.PrintMenu();
 
-        ourMenu.PrintItem(lentilSoup);
+        ourMenu.PrintMenuItem(lentilSoup);
 
         ourMenu.RemoveItem(tabbouleh);
 

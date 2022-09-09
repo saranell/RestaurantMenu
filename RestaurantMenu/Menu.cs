@@ -20,16 +20,17 @@ namespace RestaurantMenu
 
         public List<MenuItem> RemoveItem (MenuItem item)
         {
+            //public List<MenuItem> menuItems = new List<MenuItem>();
             int toBeRemoved = -1;
             for (int i = 0; i < Items.Count; i++)
             {
-                if (Items[i].Equals(item))
+                if (Items[i].Name.Equals(item.Name))
                 {
                     toBeRemoved = i;
+                    Items.RemoveAt(toBeRemoved);
                 }
             }
 
-            Items.RemoveAt(toBeRemoved);
             return Items;
         }
 
